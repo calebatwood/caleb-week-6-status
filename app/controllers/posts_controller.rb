@@ -31,6 +31,8 @@ class PostsController < ApplicationController
       if @post.update(post_params)
         flash[:notice] = "Post was successfully updated!"
         redirect_to @post
+      elsif params[:like]
+        @post.likes=@post.likes+1
       else
         render :edit
       end
