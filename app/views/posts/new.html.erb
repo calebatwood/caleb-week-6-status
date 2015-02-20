@@ -1,16 +1,3 @@
 <h2>Create an awesome new post</h2>
 
-<%= form_for(@post) do |f| %>
-
-<div><%= f.label :status %></div>
-<div><%= f.text_field :status %></div>
-
-<div><%= f.label :user %></div>
-<div><%= f.text_field :user %></div>
-
-<div><%= f.label :likes %></div>
-<div><%= f.number_field :likes %></div>
-
-<div><%= f.submit %></div>
-
-<% end %>
+<%= render 'form' %>
