@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 
-validates :status, :user, :likes, presence: true
+validates :status, :user, presence: true
 
 
 end
