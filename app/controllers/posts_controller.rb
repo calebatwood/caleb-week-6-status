@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(:id)
   end
 
   def new
@@ -18,6 +18,18 @@ class PostsController < ApplicationController
       end
   end
 
+  def likes
+    @post = Post.find(params[:id])
+      if @post.likes.nil?
+        @post.likes = 0
+      end
+
+      @post.likes += 1
+      @post.save
+      redirect_to posts_path
+
+  end
+
   def show
     @post = Post.find(params[:id])
   end
@@ -31,8 +43,6 @@ class PostsController < ApplicationController
       if @post.update(post_params)
         flash[:notice] = "Post was successfully updated!"
         redirect_to @post
-      elsif params[:like]
-        @post.likes=@post.likes+1
       else
         render :edit
       end

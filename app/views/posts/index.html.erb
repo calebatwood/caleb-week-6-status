@@ -21,9 +21,8 @@
       <td> <%= link_to post.user, post_path(post) %></td>
       <td></td>
       <td> <%= post.status %></td>
-      <td></td>
       <td> <%= post.likes %></td>
-      <td> <%= submit_tag "Like" %> </td>
+      <td> <%= button_to 'Like', like_path(:id => post.id), method: :get %></td>
       <td><%= link_to "Edit", edit_post_path(post) %></td>
     </tr>
     <% end %>
