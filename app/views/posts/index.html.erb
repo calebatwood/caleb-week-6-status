@@ -1,3 +1,31 @@
-<h2>Posts</h2>
+<h2>Wicked Awesome Posts</h2>
 
 <%= link_to "Create New Post", new_post_path %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>_____</th>
+      <th>Status</th>
+      <th>_____</th>
+      <th>Likes</th>
+      <th>_____</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+    <tr>
+      <td> <%= post.user %></td>
+      <td></td>
+      <td> <%= post.status %></td>
+      <td></td>
+      <td> <%= post.likes %></td>
+      <td></td>
+      <td> LIKE </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
