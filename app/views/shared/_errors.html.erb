@@ -1,0 +1,10 @@
+<% if @post.errors.any? %>
+<div>
+  <h3><%= pluralize(@post.errors.count, "error") %> prohibited this Post from being saved: </h3>
+  <ul class="list-unstyled">
+    <% @post.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>

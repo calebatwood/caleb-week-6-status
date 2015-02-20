@@ -1,5 +1,7 @@
 <%= form_for(@post) do |f| %>
 
+<%= render 'shared/errors' %>
+
 <div><%= f.label :status %></div>
 <div><%= f.text_field :status %></div>
 
