@@ -23,7 +23,7 @@
       <td> <%= post.status %></td>
       <td></td>
       <td> <%= post.likes %></td>
-      <td></td>
+      <td><%= link_to "Edit", edit_post_path(post) %></td>
       <td> LIKE </td>
     </tr>
     <% end %>

@@ -13,4 +13,6 @@
 <h4>Likes</h4>
 <p> <%= @post.likes %></p>
 <br>
+<%= link_to "Edit", edit_post_path(@post) %>
+<br>
 <%= link_to "Home", posts_path %>
